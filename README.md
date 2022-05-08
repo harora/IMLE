@@ -59,7 +59,7 @@ Testing scripts can also be found in `scripts` folder. For example, to test the 
 
 ```bash
 # by default, run over all test examples and output 10 completion results for each
-sh scripts/3depn/chair/test-3depn-chair-gan.sh
+sh scripts/3depn/chair/test-3depn-chair-imle.sh
 ```
 
 The completion results, along with the input parital shape, will be saved in `proj_log/mpc-3depn-chair/gan/results` by default. 
@@ -76,11 +76,8 @@ cd evaluation/
 python total_mutual_diff.py --src {path-to-saved-testing-results}
 # calculate Unidirectional Hausdorff Distance (UHD) and completeness
 python completeness.py --src {path-to-saved-testing-results}
-# calculate Minimal Matching Distance (MMD), this requries a tensorflow environment
-python mmd.py --src {path-to-saved-testing-results} --dataset {which-dataset} --class_name {which-category} -g 0
 ```
 
-Note that MMD calculation requires an compiled `external` library from [its original repo](https://github.com/optas/latent_3d_points).
 
 
 
